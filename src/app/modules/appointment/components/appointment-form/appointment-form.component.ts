@@ -1,25 +1,39 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { UserService } from '../../services/user.service';
+import { UserInteface } from '../../models/owner-model';
 
 @Component({
   selector: 'app-appointment-form',
   templateUrl: './appointment-form.component.html',
-  styleUrls: ['./appointment-form.component.scss']
 })
 export class AppointmentFormComponent implements OnInit, OnDestroy {
   isLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   isLoading: boolean;
   private unsubscribe: Subscription[] = [];
 
-  constructor(private cdr: ChangeDetectorRef) {
+  users!:Observable<UserInteface[]>;
+
+  constructor(private cdr: ChangeDetectorRef,
+    private userService:UserService) {
     const loadingSubscr = this.isLoading$
       .asObservable()
       .subscribe((res) => (this.isLoading = res));
     this.unsubscribe.push(loadingSubscr);
+    this.users = this.userService.getAll();
+
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllUsers();
+  }
+
+
+  getAllUsers(){
+    this.users = this.userService.getAll();
+    console.log(this.users)
+  }
 
   saveSettings() {
     this.isLoading$.next(true);
