@@ -2,14 +2,14 @@ import { Routes } from '@angular/router';
 
 const Routing: Routes = [
   {
-    path: 'dashboard',
+    path: 'appointments',
     loadChildren: () =>
     import('../modules/appointment/appointment.module').then((m) => m.AppointmentModule),
     
   },
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/appointments',
     pathMatch: 'full',
   },
   {

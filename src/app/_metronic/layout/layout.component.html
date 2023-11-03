@@ -19,17 +19,12 @@
         <!--end::sidebar-->
       </ng-container>
 
-      <ng-container *ngIf="appSidebarPanelDisplay">
-        <!-- TODO: app sidebar panel -->
-      </ng-container>
+    
       <!--begin::Main-->
       <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
         <!--begin::Content wrapper-->
         <div class="d-flex flex-column flex-column-fluid">
-          <ng-container *ngIf="appToolbarDisplay">
-            <app-toolbar class="app-toolbar" [ngClass]="appToolbarCSSClass" id="kt_app_toolbar"
-              [appToolbarLayout]="appToolbarLayout"></app-toolbar>
-          </ng-container>
+       
           <app-content id=" kt_app_content" class="app-content" [ngClass]="contentCSSClasses"
             [contentContainerCSSClass]="contentContainerCSSClass" [appContentContiner]="appContentContiner"
             [appContentContainerClass]="appContentContainerClass">
@@ -49,17 +44,3 @@
   <!--end::Page-->
 </div>
 <!--end::App-->
-
-<app-scripts-init></app-scripts-init>
-
-<!-- begin:: Drawers -->
-<app-activity-drawer></app-activity-drawer>
-<app-messenger-drawer></app-messenger-drawer>
-<!-- end:: Drawers -->
-
-
-<!-- begin:: Modals -->
-<app-main-modal></app-main-modal>
-<app-invite-users-modal></app-invite-users-modal>
-<app-upgrade-plan-modal></app-upgrade-plan-modal>
-<!-- end:: Modals -->
