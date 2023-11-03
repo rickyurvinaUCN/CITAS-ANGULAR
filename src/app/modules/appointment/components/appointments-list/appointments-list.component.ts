@@ -4,7 +4,6 @@ import { ModalAppointmentConfig } from '../../models/modal-appointment.config';
 import { AppointmentService } from '../../services/appointment.service';
 import { Appointment } from '../../models/appointment-model';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { DeleteConfirmationModalComponentComponent } from '../delete-confirmation-modal-component/delete-confirmation-modal-component.component';
 @Component({
@@ -65,13 +64,11 @@ export class AppointmentsListComponent implements OnInit {
     this.modalRef.result.then(
       (result) => {
         if (result === 'confirm') {
-          // Elimina la cita y actualiza la lista de citas
           this.deleteAppointment(id);
 
         }
       },
       (reason) => {
-        // Maneja el cierre del modal sin confirmación si es necesario
       }
     );
   }

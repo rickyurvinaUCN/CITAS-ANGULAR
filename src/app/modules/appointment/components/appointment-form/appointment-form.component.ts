@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import { UserInteface } from '../../models/owner-model';
 import { AppointmentService } from '../../services/appointment.service';
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup,  Validators } from '@angular/forms';
 import { Appointment } from '../../models/appointment-model';
 @Component({
   selector: 'app-appointment-form',

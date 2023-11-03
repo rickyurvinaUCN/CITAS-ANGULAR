@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, of, Subscription, throwError } from 'rxjs';
-import { map, catchError, switchMap, finalize, retry } from 'rxjs/operators';
+import { Observable,  throwError } from 'rxjs';
+import {  catchError,   retry } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { Appointment } from '../models/appointment-model';
-import { UserInteface } from '../models/owner-model';
-
 
 @Injectable({
   providedIn: 'root'

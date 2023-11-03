@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, of, Subscription, throwError } from 'rxjs';
-import { map, catchError, switchMap, finalize, retry } from 'rxjs/operators';
+import { Observable,  throwError } from 'rxjs';
+import { map, catchError,  retry } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { UserInteface } from '../models/owner-model';
