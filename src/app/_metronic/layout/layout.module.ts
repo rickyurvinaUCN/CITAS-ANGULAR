@@ -10,7 +10,6 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslationModule } from '../../modules/i18n';
 import { LayoutComponent } from './layout.component';
-import { ExtrasModule } from '../partials/layout/extras/extras.module';
 import { Routing } from '../../pages/routing';
 import { AsideComponent } from './components/aside/aside.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -26,9 +25,8 @@ import {
   DrawersModule,
   DropdownMenusModule,
   ModalsModule,
-  EngagesModule,
+  
 } from '../partials';
-import { EngagesComponent } from '../partials/layout/engages/engages.component';
 import { ThemeModeModule } from '../partials/layout/theme-mode-switcher/theme-mode.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SidebarLogoComponent } from './components/sidebar/sidebar-logo/sidebar-logo.component';
@@ -63,7 +61,6 @@ const routes: Routes = [
     TopbarComponent,
     PageTitleComponent,
     HeaderMenuComponent,
-    EngagesComponent,
     SidebarComponent,
     SidebarLogoComponent,
     SidebarMenuComponent,
@@ -82,10 +79,8 @@ const routes: Routes = [
     InlineSVGModule,
     NgbDropdownModule,
     NgbProgressbarModule,
-    ExtrasModule,
     ModalsModule,
     DrawersModule,
-    EngagesModule,
     DropdownMenusModule,
     NgbTooltipModule,
     TranslateModule,
