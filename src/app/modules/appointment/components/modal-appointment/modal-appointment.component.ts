@@ -1,4 +1,4 @@
-import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Input, TemplateRef, ViewChild, Output, EventEmitter  } from '@angular/core';
 
 import { ModalConfig } from '../../../../_metronic/partials/layout/modals/modal.config';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -6,9 +6,9 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-modal-appointment',
   templateUrl: './modal-appointment.component.html',
-  styleUrls: ['./modal-appointment.component.scss']
 })
 export class ModalAppointmentComponent {
+  @Output() updateAppointmentsList = new EventEmitter<void>();
   @Input() public modalConfig: ModalConfig;
   @ViewChild('modal') private modalContent: TemplateRef<ModalAppointmentComponent>;
   private modalRef: NgbModalRef;
@@ -32,6 +32,7 @@ export class ModalAppointmentComponent {
         (await this.modalConfig.onClose());
       this.modalRef.close(result);
     }
+    this.updateAppointmentsList.emit();
   }
 
   async dismiss(): Promise<void> {

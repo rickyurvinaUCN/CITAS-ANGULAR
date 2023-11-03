@@ -13,16 +13,8 @@ import { environment } from 'src/environments/environment';
 // #fake-start#
 import { ModalAppointmentComponent } from './modules/appointment/components/modal-appointment/modal-appointment.component';
 
-// #fake-end#
 
-// function appInitializer(authService: AuthService) {
-//   return () => {
-//     return new Promise((resolve) => {
-//       //@ts-ignore
-//       authService.getUserByToken().subscribe().add(resolve);
-//     });
-//   };
-// }
+
 
 @NgModule({
   declarations: [AppComponent],

@@ -27,6 +27,18 @@ export class AppointmentService {
     )
   }
 
+  delete(id: number) {
+    return this.httpClient.delete(`${environment.API_URL_APPOINTMENTS}appointment/${id}`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  create(appointment: Appointment): Observable<Appointment> {
+    return this.httpClient.post<Appointment>(`${environment.API_URL_APPOINTMENTS}appointment`, appointment, this.httpOptions).pipe(
+      catchError(this.handleError)
+    );
+  }
+
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

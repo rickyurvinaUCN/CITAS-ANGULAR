@@ -57,7 +57,7 @@
           </td>
           <td>
             <span class="text-dark fw-bolder text-hover-primary d-block fs-6">
-              {{appointment.user.name}}
+              {{appointment.user?.name}}
             </span>
 
           </td>
@@ -86,7 +86,7 @@
               </span>
               <span class="
                     btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  ">
+                  " (click)="openDeleteConfirmationModal(appointment.id)">
                 <app-keenicon name="trash" class="fs-3"></app-keenicon>
               </span>
             </div>
@@ -99,10 +99,8 @@
     <!-- end::Table -->
   </div>
   <!-- end::Table container -->
-  <app-modal-appointment #modal [modalConfig]="modalConfig">
-    <app-appointment-form>
-
-    </app-appointment-form>
+  <app-modal-appointment #modal [modalConfig]="modalConfig" (updateAppointmentsList)="getAllAppointments()">
+  
   </app-modal-appointment>
 
 
